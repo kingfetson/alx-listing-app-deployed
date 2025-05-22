@@ -1,174 +1,40 @@
-# ALX Listing App
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-An Airbnb clone listing page built with Next.js, TypeScript, ESLint, and TailwindCSS. This milestone sets up the foundational project structure and configuration.
+## Getting Started
 
-## 🎯 Objective
+First, run the development server:
 
-Scaffold a Next.js application with the Pages Router (no AppRouter), TypeScript, ESLint, and TailwindCSS. Establish a clean, maintainable folder structure and configure essential settings to support future development of reusable listing components.
-
-## 🚀 Project Setup
-
-1. **Create Next.js App**
-
-   ```bash
-   npx create-next-app@latest alx-listing-app \
-     --typescript --tailwind --eslint --no-app-router --no-src-dir
-   cd alx-listing-app
-   ```
-
-2. **Confirm TailwindCSS Configuration**
-
-   * **`tailwind.config.js`**
-
-     ```js
-     module.exports = {
-       content: [
-         './pages/**/*.{ts,tsx}',
-         './components/**/*.{ts,tsx}',
-       ],
-       theme: { extend: {} },
-       plugins: [],
-     }
-     ```
-
-   * **`styles/globals.css`**
-
-     ```css
-     @tailwind base;
-     @tailwind components;
-     @tailwind utilities;
-     ```
-
-## 📁 Folder Structure
-
-```
-alx-listing-app/
-├── components/
-│   └── common/
-│       ├── Card.tsx
-│       └── Button.tsx
-├── constants/
-│   └── index.ts
-├── interfaces/
-│   └── index.ts
-├── pages/
-│   ├── _app.tsx
-│   └── index.tsx
-├── public/
-│   └── assets/
-│       └── placeholder.png
-├── styles/
-│   └── globals.css
-├── tailwind.config.js
-├── postcss.config.js
-├── tsconfig.json
-└── README.md
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 📦 Core Files
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### `components/common/Card.tsx`
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-```tsx
-import { CardProps } from '../../interfaces';
+[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-export default function Card({ title, description, imageSrc }: CardProps) {
-  return (
-    <div className="bg-white rounded-2xl shadow-lg p-4">
-      <img src={imageSrc} alt={title} className="w-full h-40 object-cover rounded-lg" />
-      <h3 className="mt-2 text-xl font-semibold">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  );
-}
-```
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
 
-### `components/common/Button.tsx`
+This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```tsx
-import { ButtonProps } from '../../interfaces';
+## Learn More
 
-export default function Button({ label, onClick }: ButtonProps) {
-  return (
-    <button
-      onClick={onClick}
-      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-    >
-      {label}
-    </button>
-  );
-}
-```
+To learn more about Next.js, take a look at the following resources:
 
-### `interfaces/index.ts`
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
 
-```ts
-export interface CardProps {
-  title: string;
-  description: string;
-  imageSrc: string;
-}
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-export interface ButtonProps {
-  label: string;
-  onClick: () => void;
-}
-```
+## Deploy on Vercel
 
-### `constants/index.ts`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```ts
-export const PLACEHOLDER_IMAGE = '/assets/placeholder.png';
-export const SITE_NAME = 'ALX Listing App';
-```
-
-### `pages/index.tsx`
-
-```tsx
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import { PLACEHOLDER_IMAGE, SITE_NAME } from '../constants';
-
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold">{SITE_NAME}</h1>
-      </header>
-      <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card
-          title="Cozy Cottage"
-          description="A small, charming cottage in the countryside."
-          imageSrc={PLACEHOLDER_IMAGE}
-        />
-        {/* Add more Card components as needed */}
-      </main>
-      <footer className="mt-8">
-        <Button label="Explore Listings" onClick={() => alert('Coming soon!')} />
-      </footer>
-    </div>
-  );
-}
-```
-
-## 🌐 Assets
-
-* Place images and SVGs in `public/assets/`, e.g., `placeholder.png`.
-
-## 📖 How to Run Locally
-
-1. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-2. **Start development server**
-
-   ```bash
-   npm run dev
-   ```
-3. **Open in browser**: [http://localhost:3000](http://localhost:3000)
-
----
-
-*Foundation for building a maintainable, scalable Airbnb clone listing page.*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.

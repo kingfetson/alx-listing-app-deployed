@@ -1,0 +1,10 @@
+{
+  // Silence unknown @ rules in CSS
+  "css.lint.unknownAtRules": "ignore",
+  // Disable the default CSS validator (we’ll rely on Tailwind IntelliSense instead)
+  "css.validate": false,
+  // Treat all *.css files as PostCSS so @tailwind directives are recognized
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}
