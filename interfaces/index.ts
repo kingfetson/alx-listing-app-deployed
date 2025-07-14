@@ -16,3 +16,15 @@ export interface PropertyProps {
   image: string;
   discount: string;
 }
+
+// Add this for API usage in detail page
+export interface Property {
+  id: number;
+  title: string;
+  location: string;
+  category: string;
+  price: number | string;
+  image: string;
+  description: string;
+  rating: number;
+}
