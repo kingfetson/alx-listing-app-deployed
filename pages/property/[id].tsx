@@ -3,7 +3,17 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import BookingSection from '@/components/BookingSection';
 import ReviewSection from '@/components/ReviewSection';
-import { Property } from '@/interfaces';
+// Define Property type locally if not exported from @/interfaces
+type Property = {
+  id: number | string;
+  title: string;
+  location: string;
+  description: string;
+  price: number | string;
+  image: string;
+  rating: number;
+  category: string;
+};
 
 export default function PropertyDetailPage() {
   const router = useRouter();

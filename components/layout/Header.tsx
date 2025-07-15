@@ -10,7 +10,7 @@ const Header = () => {
           <a href="#" className="text-gray-700 hover:text-blue-500">Mansions</a>
           <a href="#" className="text-gray-700 hover:text-blue-500">Countryside</a>
         </nav>
-        <div className="space-x-4">
+        <div className="space-x-3">
           <input type="text" placeholder="Search..." className="px-2 py-1 border rounded hidden sm:inline" />
           <button className="text-blue-500 font-semibold">Sign in</button>
           <button className="bg-blue-500 text-white px-3 py-1 rounded">Sign up</button>

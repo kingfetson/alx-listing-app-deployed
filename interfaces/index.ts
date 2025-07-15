@@ -1,19 +1,30 @@
 export interface PropertyProps {
-  name?: string; // made optional for Zillow compatibility
-  address?: {
-    state?: string;
-    city?: string;
-    country?: string;
+  name: string;
+  address: {
+    state: string;
+    city: string;
+    country: string;
   };
-  rating?: number;
-  category?: string[];
-  price?: number;
-  offers?: {
+  rating: number;
+  category: string[];
+  price: number;
+  offers: {
     bed: string;
     shower: string;
     occupants: string;
   };
-  image?: string; // your own format
-  imgSrc?: string; // Zillow image key
-  discount?: string;
+  image: string;
+  discount: string;
+}
+
+// Add this for API usage in detail page
+export interface Property {
+  id: number;
+  title: string;
+  location: string;
+  category: string;
+  price: number | string;
+  image: string;
+  description: string;
+  rating: number;
 }
